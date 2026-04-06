@@ -308,7 +308,7 @@
 					<input type="hidden" name="authEncData" id="authEncData" value="${param.authEncData }"/>
 					</form>
 					<%
-						String domainNm = XmlBean.getConfigValue("domain.name");
+						String domainNm = request.getScheme() + "://" + request.getServerName(); //XmlBean.getConfigValue("domain.name");
 						String sCheckplusUrl = domainNm + "/user/checkplus_main.do";      // 휴태폰본인인증 URL
 					%>
 					<script>
