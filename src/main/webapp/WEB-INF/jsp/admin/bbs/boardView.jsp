@@ -184,7 +184,7 @@
 			<c:if test="${boardMap.gLvl eq '0' and vo.boardType eq 'free'}">
 			<a href="${vo.boardType }Write.do?pIdx=${boardMap.idx }" class="btn01 btn_black">답글</a>
 			</c:if>
-			<c:if test="${sessionScope.sessionUserInfo.userId eq boardMap.regId}">
+			<c:if test="${sessionScope.sessionUserInfo.userId eq boardMap.regId || sessionScope.sessionUserInfo.userMemLvl eq '1' || sessionScope.sessionUserInfo.userMemLvl eq '2'}">
 			<button onclick="location.href='${vo.boardType }Write.do?idx=${boardMap.idx }'" class="btn01 btn_green" type="button">수정</button>
 			<button onclick="fn_del()" class="btn01 btn_gray" type="button">삭제</button>
 			</c:if>
